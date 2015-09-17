@@ -1,0 +1,58 @@
+.brand {
+  width: 100px;
+}
+
+#introCarousel {
+  top: -20px;
+}
+
+body {
+  padding-top: 70px;
+  font-family: 'Open Sans', sans-serif!important;
+}
+
+#introCarouselInner {
+  max-height: 550px;
+}
+
+#causeheader {
+  text-align: center;
+}
+
+.carousel-caption {
+  margin-bottom: 175px;
+}
+
+.carousel-caption.Center {
+  text-align: center;
+}
+
+.carousel-caption.Left {
+  text-align: left;
+}
+
+.carousel-caption.Right {
+  text-align: right;
+}
+
+.carousel-caption.White {
+  color: white;
+}
+
+.carousel-caption.Black {
+  color: black;
+}
+
+
+#aboutPageHeader {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  width: 300px;
+  margin-left: 30%;
+  margin-right: auto;
+
+}
+
+

@@ -1,0 +1,41 @@
+<carousel id="introCarousel" interval="myInterval" no-wrap="noWrapSlides">
+  <slide id="introCarouselInner" ng-repeat="slide in homeSlide" active="slide.active">
+    <div class="carousel-caption slideFont" ng-class="[slide.sliderStyling, slide.fontColor]">
+      <span style="font-size: 60px;">{{slide.sliderName}}</span>
+      <p style="font-size: 25px">{{slide.sliderDesc}}</p>
+      <button ng-repeat="button in slide.buttons" class="btn btn-lg" ng-class="colorChoice('Red')">{{button.buttonText}}</button>
+    </div>
+    <img ng-src="{{slide.sliderImage}}" style="margin:auto;">
+  </slide>
+</carousel>
+
+
+<div class="col-md-6" style="text-align: center;" ng-repeat="cause in homeCause">
+
+  <a ui-sref="cause({causeId: {{cause.id}}})"><img ng-src={{cause.causeImage}}></a>
+
+  <h3>{{cause.causeName}}</h3>
+
+  <p>{{cause.causeDesc}}</p>
+
+  <button class="btn btn-primary btn-med" ui-sref="cause({causeId: {{cause.id}}})">View Cause</button>
+
+  <br>
+  <br>
+
+</div>
+
+
+<hr style="width: 90%; text-align:center; color: black; height: 1px; background-color:#888888;" />
+
+<a ui-sref="mockCMS">Add To This Page</a>
+<a ui-sref="CMScause">Add To a Cause Page</a>
+<a ui-sref="organizationCMS">Add To an Organization</a>
+
+
+
+
+
+
+
+

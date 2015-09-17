@@ -1,0 +1,55 @@
+<div class="col-md-4">
+
+  <h3>Cause Image:</h3>
+
+  <select class="form-control" ng-model="causeImage" ng-options="image for image in causeImagesOption"></select>
+
+  <h3>Cause Header:</h3>
+
+  <input class="form-control" ng-model="causeName">
+
+  <h3>Cause Description:</h3>
+
+  <input class="form-control" ng-model="causeDesc">
+
+  <h3>Donation Goal ($):</h3>
+
+  <input class="form-control" ng-model="donationGoal">
+
+  <h3>Final Date for Donations:</h3>
+
+  <input class="form-control" ng-model="lastDay">
+
+  <h3>Add Organizations</h3>
+
+  <select class="form-control" ng-model="organizationLogo" ng-options="logo for logo in organizationOptions"></select>
+
+  <button class="btn btn-success btn-md" ng-click="addOrganization()">Add Organization</button><br>
+  <label>Organizations to be added : </label>
+  {{count}}
+
+  <br>
+  <br>
+
+  <hr style="width: 90%; text-align:center; color: black; height: 1px; background-color:#888888;" />
+
+  <button class="btn btn-primary btnmd" ng-click="submitCause()">Add Cause</button>
+
+
+</div>
+
+<div class="col-md-4">
+
+  <div ng-repeat="destroy in cause">
+    <button class="btn btn-danger btn-md" ng-click="destroyCause(destroy.id)">Destroy cause {{destroy.causeName}}</button>
+  </div>
+
+</div>
+
+<div class="col-md-4">
+
+  <div ng-repeat="destroy in cause">
+    <a ui-sref="cause({causeId: {{destroy.id}}})">Visit {{destroy.causeName}}</a>
+  </div>
+
+</div>

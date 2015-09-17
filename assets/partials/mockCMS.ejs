@@ -1,0 +1,95 @@
+<div class="col-md-6">
+
+
+  <h3>Slider Image:</h3>
+
+  <select class="form-control" ng-model="sliderImage" ng-options="image for image in slideImageSearch"></select>
+
+  <h3>Slider Header:</h3>
+
+  <input class="form-control" ng-model="sliderName">
+
+  <h3>Slider Description:</h3>
+
+  <input class="form-control" ng-model="sliderDesc">
+
+  <h3>Slider Styling Position:</h3>
+
+  <select class="form-control" ng-model="sliderStyling" ng-options="style for style in slideStyleOptions"></select>
+
+  <h3>Slider Font Color:</h3>
+
+  <select class="form-control" ng-model="sliderFontColor" ng-options="style for style in slideFontColorOptions"></select>
+
+  <hr style="width: 90%; text-align:center; color: black; height: 1px; background-color:#888888;" />
+
+  <label>Button Text:</label>
+
+  <input class="form-control" ng-model="buttonText">
+
+  <br>
+
+  <label>Button Color:</label>
+
+  <select class="form-control" ng-model="buttonColor" ng-options="color for color in buttonColorOptions"></select>
+
+  <button ng-click='addButton()' class="btn btn-primary btn-med">Add Button to Current Slide</button>
+
+  <hr style="width: 90%; text-align:center; color: black; height: 1px; background-color:#888888;" />
+
+
+  <br>
+
+  <button ng-click='submitSlide()' class="btn btn-success btn-lg">Add this to Database</button>
+
+
+  <h1>{{sliderStatus}}</h1>
+
+</div>
+
+<div class="col-md-6">
+
+  <div ng-repeat="destroy in destroySlider">
+
+    <button ng-click="destroySlide(destroy.id)" class="btn btn-danger btn-med">Destroy Slider for {{destroy.sliderName}}</button>
+
+  </div>
+
+</div>
+
+
+<hr style="width: 90%; text-align:center; color: black; height: 1px; background-color:#888888;" />
+
+<div class="col-md-6">
+
+  <h3>Cause Image:</h3>
+
+  <select class="form-control" ng-model="causeImage" ng-options="image for image in causeImageSearch"></select>
+
+  <h3>Cause Header:</h3>
+
+  <input class="form-control" ng-model="causeName">
+
+  <h3>Cause Description:</h3>
+
+  <input class="form-control" ng-model="causeDesc">
+
+  <br>
+  <br>
+
+  <button ng-click="submitCause()" class="btn btn-primary btn-lg">Add this to Database</button>
+
+
+  <h1>{{causeStatus}}</h1>
+
+</div>
+
+<div class="col-md-6">
+
+  <div ng-repeat="destroy in destroyCauses">
+
+    <button ng-click="destroyCause(destroy.id)" class="btn btn-danger btn-md">Destroy Cause for {{destroy.causeName}}</button>
+
+  </div>
+
+</div>
