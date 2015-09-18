@@ -10,8 +10,6 @@ angular.module('myApp').controller('CauseController', ['$scope', '$http', '$stat
 
       $scope.causeData = data.data;
 
-      console.log('DATA: ' + JSON.stringify($scope.causeData));
-
     }, function(data) {
 
     });

@@ -16,7 +16,7 @@ angular.module('myApp').controller('MockCMSController', ['$scope', '$http', func
 
       $scope.slideImageSearch = response.data;
 
-      console.log($scope.slideImageSearch);
+
 
     }, function(response) {
 
@@ -27,7 +27,7 @@ angular.module('myApp').controller('MockCMSController', ['$scope', '$http', func
 
       $scope.causeImageSearch = response.data;
 
-      console.log($scope.causeImageSearch);
+
 
     }, function(response) {
 
@@ -113,7 +113,6 @@ angular.module('myApp').controller('MockCMSController', ['$scope', '$http', func
   };
 
   $scope.destroySlide = function (id) {
-    console.log('DESTROY SLIDE ID: ' + id);
 
     $http.post('/homeslider/destroyHomeSlide', {id: id}).
       then(function(response) {
@@ -127,7 +126,6 @@ angular.module('myApp').controller('MockCMSController', ['$scope', '$http', func
   }
 
   $scope.destroyCause = function (id) {
-    console.log('DESTROY CAUSE ID: ' + id)
 
     $http.post('/homecauses/destroyHomeCause', {id: id}).
       then(function(response) {
@@ -138,7 +136,6 @@ angular.module('myApp').controller('MockCMSController', ['$scope', '$http', func
 
   }
 
-  //CMS Controller for Causes Page
 
 
 

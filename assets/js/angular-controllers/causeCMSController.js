@@ -8,29 +8,39 @@ angular.module('myApp').controller('CauseCMSController', ['$scope', '$http', fun
 
   organizationArray = [];
 
+
+
+
   $http.get('/singlecause/searchimages')
     .then(function(response) {
 
       $scope.causeImagesOption = response.data;
-      console.log('cause images: ' + JSON.stringify(response.data));
 
     });
 
-  $http.get('/singlecause/searchlogos')
+  //$http.get('/singlecause/searchlogos')
+  //  .then(function(response) {
+  //
+  //    $scope.organizationOptions = response.data;
+  //
+  //    console.log('organization images: ' + JSON.stringify(response.data));
+  //
+  //  });
+
+  $http.get('/organizations')
     .then(function(response) {
 
-      $scope.organizationOptions = response.data;
+      $scope.organizationData = response.data;
 
-      console.log('organization images: ' + JSON.stringify(response.data));
+    }, function(response) {
 
-    });
+    })
 
   $http.get('/singlecause')
     .then(function(response) {
 
       $scope.cause = response.data;
 
-      console.log(JSON.stringify($scope.cause));
     }, function(response) {
 
     });
@@ -42,7 +52,8 @@ angular.module('myApp').controller('CauseCMSController', ['$scope', '$http', fun
       causeName: $scope.causeName,
       causeDesc: $scope.causeDesc,
       donationGoal: $scope.donationGoal,
-      lastDay: $scope.lastDay
+      lastDay: $scope.lastDay,
+      organizations: organizationArray
     };
 
     $http.post('/singlecause/createcause', sendData)
@@ -55,8 +66,6 @@ angular.module('myApp').controller('CauseCMSController', ['$scope', '$http', fun
   };
 
   $scope.destroyCause = function(id) {
-
-    console.log('JAMMIN BRO: ' + id);
 
     $http.post('/singlecause/destroycause', {id: id})
       .then(function(data) {
@@ -71,9 +80,15 @@ angular.module('myApp').controller('CauseCMSController', ['$scope', '$http', fun
 
   $scope.addOrganization = function() {
 
+    organizationArray.push($scope.organizationName.id);
 
+    console.log(organizationArray);
 
-
+    $scope.count++;
   }
+
+
+
+
 
 }]);

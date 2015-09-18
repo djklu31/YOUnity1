@@ -1,55 +1,59 @@
-<div class="col-md-4">
+<span ng-init="organizationData=GetOrganizations">
 
-  <h3>Cause Image:</h3>
+  <div class="col-md-4">
 
-  <select class="form-control" ng-model="causeImage" ng-options="image for image in causeImagesOption"></select>
+    <h3>Cause Image:</h3>
 
-  <h3>Cause Header:</h3>
+    <select class="form-control" ng-model="causeImage" ng-options="image for image in causeImagesOption"></select>
 
-  <input class="form-control" ng-model="causeName">
+    <h3>Cause Header:</h3>
 
-  <h3>Cause Description:</h3>
+    <input class="form-control" ng-model="causeName">
 
-  <input class="form-control" ng-model="causeDesc">
+    <h3>Cause Description:</h3>
 
-  <h3>Donation Goal ($):</h3>
+    <input class="form-control" ng-model="causeDesc">
 
-  <input class="form-control" ng-model="donationGoal">
+    <h3>Donation Goal ($):</h3>
 
-  <h3>Final Date for Donations:</h3>
+    <input class="form-control" ng-model="donationGoal">
 
-  <input class="form-control" ng-model="lastDay">
+    <h3>Final Date for Donations:</h3>
 
-  <h3>Add Organizations</h3>
+    <input class="form-control" ng-model="lastDay">
 
-  <select class="form-control" ng-model="organizationLogo" ng-options="logo for logo in organizationOptions"></select>
+    <h3>Add Organizations</h3>
 
-  <button class="btn btn-success btn-md" ng-click="addOrganization()">Add Organization</button><br>
-  <label>Organizations to be added : </label>
-  {{count}}
+    <select class="form-control" ng-model="organizationName" ng-options="name.name for name in organizationData"></select>
 
-  <br>
-  <br>
+    <button class="btn btn-success btn-md" ng-click="addOrganization()">Add Organization</button><br>
+    <label>Organizations to be added : </label>
+    {{count}}
 
-  <hr style="width: 90%; text-align:center; color: black; height: 1px; background-color:#888888;" />
+    <br>
+    <br>
 
-  <button class="btn btn-primary btnmd" ng-click="submitCause()">Add Cause</button>
+    <hr style="width: 90%; text-align:center; color: black; height: 1px; background-color:#888888;" />
+
+    <button class="btn btn-primary btnmd" ng-click="submitCause()">Add Cause</button>
 
 
-</div>
-
-<div class="col-md-4">
-
-  <div ng-repeat="destroy in cause">
-    <button class="btn btn-danger btn-md" ng-click="destroyCause(destroy.id)">Destroy cause {{destroy.causeName}}</button>
   </div>
 
-</div>
+  <div class="col-md-4">
 
-<div class="col-md-4">
+    <div ng-repeat="destroy in cause">
+      <button class="btn btn-danger btn-md" ng-click="destroyCause(destroy.id)">Destroy cause {{destroy.causeName}}</button>
+    </div>
 
-  <div ng-repeat="destroy in cause">
-    <a ui-sref="cause({causeId: {{destroy.id}}})">Visit {{destroy.causeName}}</a>
   </div>
 
-</div>
+  <div class="col-md-4">
+
+    <div ng-repeat="destroy in cause">
+      <a ui-sref="cause({causeId: {{destroy.id}}})">Visit {{destroy.causeName}}</a>
+    </div>
+
+  </div>
+
+</span>

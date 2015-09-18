@@ -12,9 +12,26 @@ module.exports = {
 
     console.log('CAUSE REQUEST IS: ' + JSON.stringify(data));
 
-    SingleCause.create({causeImage: './images/home-cause-images/' + data.causeImage, causeName: data.causeName, causeDesc: data.causeDesc, donationGoal: data.donationGoal, lastDay: data.lastDay}).exec(function createCB(err, created){
-      res.send('success');
+    console.log('Organization for Cause: ' + data.organizations);
+
+    SingleCause.create({causeImage: './images/home-cause-images/' + data.causeImage, causeName: data.causeName, causeDesc: data.causeDesc, donationGoal: data.donationGoal, lastDay: data.lastDay, organizations: data.organizations}).exec(function createCB(err, created){
+
+     //for (var i=0; i<data.organizations.length; i++) {
+     //
+     //  console.log('organization name is: ' + data.organizations[i]);
+     //
+     //  Organizations.update({name: data.organizations[i]},{causes: [1, 2 , 3]}).exec(function(err, updated) {
+     //
+     //
+     //
+     //  });
+     //
+     // }
+
+
     });
+
+    res.send('success');
 
 
   },

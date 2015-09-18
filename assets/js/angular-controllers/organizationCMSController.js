@@ -6,7 +6,6 @@ angular.module('myApp').controller('OrganizationCMSController', ['$scope', '$htt
 
   $scope.addOrganization = function() {
 
-    console.log('Add Organization');
 
     var sendData = {
       logo: $scope.organizationLogo,
@@ -14,7 +13,6 @@ angular.module('myApp').controller('OrganizationCMSController', ['$scope', '$htt
       description: $scope.organizationDesc
     };
 
-    console.log('Organization DATA: ' + JSON.stringify(sendData));
 
     $http.post('/organizations/add-organization', sendData)
       .then(function(response){
