@@ -9,8 +9,6 @@ angular.module('myApp').controller('CauseCMSController', ['$scope', '$http', fun
   organizationArray = [];
 
 
-
-
   $http.get('/singlecause/searchimages')
     .then(function(response) {
 
@@ -31,6 +29,7 @@ angular.module('myApp').controller('CauseCMSController', ['$scope', '$http', fun
     .then(function(response) {
 
       $scope.organizationData = response.data;
+
 
     }, function(response) {
 
@@ -76,7 +75,7 @@ angular.module('myApp').controller('CauseCMSController', ['$scope', '$http', fun
 
       });
 
-  }
+  };
 
   $scope.addOrganization = function() {
 
