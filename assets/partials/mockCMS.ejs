@@ -11,7 +11,7 @@
 
   <h3>Slider Description:</h3>
 
-  <input class="form-control" ng-model="sliderDesc">
+  <textarea rows="5" class="form-control" ng-model="sliderDesc"></textarea>
 
   <h3>Slider Styling Position:</h3>
 
@@ -33,7 +33,7 @@
 
   <select class="form-control" ng-model="buttonColor" ng-options="color for color in buttonColorOptions"></select>
 
-  <button ng-click='addButton()' class="btn btn-primary btn-med">Add Button to Current Slide</button>
+  <button ng-click='addButton()' class="btn btn-primary btn-md">Add Button to Current Slide</button>
 
   <hr style="width: 90%; text-align:center; color: black; height: 1px; background-color:#888888;" />
 
@@ -49,9 +49,9 @@
 
 <div class="col-md-6">
 
-  <div ng-repeat="destroy in destroySlider">
+  <div ng-repeat="destroy in sliderData">
 
-    <button ng-click="destroySlide(destroy.id)" class="btn btn-danger btn-med">Destroy Slider for {{destroy.sliderName}}</button>
+    <button ng-click="destroySlide(destroy.id)" class="btn btn-danger btn-md">Destroy Slider for {{destroy.sliderName}}</button>
 
   </div>
 
@@ -68,11 +68,11 @@
 
   <h3>Cause Header:</h3>
 
-  <input class="form-control" ng-model="causeName">
+  <select class="form-control" ng-model="causeName" ng-options="name.causeName for name in singleCauseData"></select>
 
   <h3>Cause Description:</h3>
 
-  <input class="form-control" ng-model="causeDesc">
+  <input class="form-control" ng-model="causeDesc"></textarea>
 
   <br>
   <br>
@@ -86,7 +86,7 @@
 
 <div class="col-md-6">
 
-  <div ng-repeat="destroy in destroyCauses">
+  <div ng-repeat="destroy in causeData">
 
     <button ng-click="destroyCause(destroy.id)" class="btn btn-danger btn-md">Destroy Cause for {{destroy.causeName}}</button>
 

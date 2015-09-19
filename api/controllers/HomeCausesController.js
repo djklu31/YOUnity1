@@ -11,7 +11,7 @@ module.exports = {
 
     var data = req.body;
 
-    HomeCauses.create({causeImage: '/images/home-cause-images/' + data.causeImage, causeName: data.causeName, causeDesc: data.causeDesc}).exec(function createCB(err, created){
+    HomeCauses.create({causeImage: '/images/home-cause-images/' + data.causeImage, causeName: data.causeName, causeDesc: data.causeDesc, parentId: data.parentId}).exec(function createCB(err, created){
 
       if(err) {
         console.log(err);

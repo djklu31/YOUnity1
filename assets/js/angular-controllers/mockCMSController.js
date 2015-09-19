@@ -37,7 +37,7 @@ angular.module('myApp').controller('MockCMSController', ['$scope', '$http', func
   $http.get('/homeslider').
     then(function(response) {
 
-      $scope.destroySlider = response.data;
+      $scope.sliderData = response.data;
 
     }, function(response) {
 
@@ -46,9 +46,18 @@ angular.module('myApp').controller('MockCMSController', ['$scope', '$http', func
   $http.get('/homecauses').
     then(function(response) {
 
-      $scope.destroyCauses = response.data;
+      $scope.causeData = response.data;
 
     }, function(response) {
+
+    });
+
+  $http.get('/singlecause')
+    .then(function(response) {
+
+      $scope.singleCauseData = response.data;
+
+  }, function(response) {
 
     });
 
@@ -93,7 +102,8 @@ angular.module('myApp').controller('MockCMSController', ['$scope', '$http', func
 
     var sendData = {
       causeImage: $scope.causeImage,
-      causeName: $scope.causeName,
+      causeName: $scope.causeName.causeName,
+      parentId: $scope.causeName.id,
       causeDesc: $scope.causeDesc
     };
 
@@ -103,7 +113,7 @@ angular.module('myApp').controller('MockCMSController', ['$scope', '$http', func
         $scope.causeStatus = response.data;
 
         if(response.data === 'success') {
-          window.location.reload();
+
         }
 
       }, function(response) {

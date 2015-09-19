@@ -2,10 +2,14 @@
 
 <div class="col-md-6">
   <label>Select Organization Logo</label>
-  <input class="form-control" ng-model="organizationLogo">
+  <select class="form-control" ng-model="organizationLogo" ng-options="logo for logo in organizationLogos"></select>
   <label>Organization Name</label>
   <input class="form-control" ng-model="organizationName">
   <label>Organization Description</label>
   <input class="form-control" ng-model="organizationDesc">
   <button class="btn btn-primary btn-md" ng-click="addOrganization()">Add Organization</button>
+</div>
+
+<div class="col-md-6">
+  <button ng-click="destroyOrganization(organization.id)" ng-repeat="organization in organizationData">Destroy {{organization.name}}</button>
 </div>

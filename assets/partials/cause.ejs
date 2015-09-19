@@ -17,8 +17,21 @@
 
 </div>
 
-<div>
+<br>
+
+<div class="col-md-12">
   <p>
     {{causeData.causeDesc}}
   </p>
+
 </div>
+
+<div>
+  <div class="col-md-4" style="text-align: center;" ng-repeat="organization in causeData.organizations">
+    <img style="width: 200px;" ng-src={{organization.logo}}>
+    <h3>{{organization.name}}</h3>
+    <p>{{organization.description}}</p>
+  </div>
+</div>
+
+

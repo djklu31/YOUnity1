@@ -19,6 +19,9 @@ module.exports = {
     causeDesc: {
       type: 'string',
       required: true
+    },
+    parentId: {
+      type: 'integer'
     }
   }
 };

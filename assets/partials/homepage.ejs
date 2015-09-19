@@ -12,13 +12,13 @@
 
 <div class="col-md-6" style="text-align: center;" ng-repeat="cause in homeCause">
 
-  <a ui-sref="cause({causeId: {{cause.id}}})"><img ng-src={{cause.causeImage}}></a>
+  <a ui-sref="cause({causeId: {{cause.parentId}}})"><img ng-src={{cause.causeImage}}></a>
 
   <h3>{{cause.causeName}}</h3>
 
   <p>{{cause.causeDesc}}</p>
 
-  <button class="btn btn-primary btn-med" ui-sref="cause({causeId: {{cause.id}}})">View Cause</button>
+  <button class="btn btn-primary btn-med" ui-sref="cause({causeId: {{cause.parentId}}})">View Cause</button>
 
   <br>
   <br>
